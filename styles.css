@@ -1,0 +1,274 @@
+/* Reset i podstawowe style */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Rajdhani', 'Orbitron', sans-serif;
+}
+
+body {
+    background-color: #0a0a0a;
+    color: #e0e0e0;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Animacja tła */
+.background-animation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, #0a0a0a 0%, #000 100%);
+    z-index: -1;
+    overflow: hidden;
+}
+
+.background-animation::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 200%;
+    background: 
+        repeating-linear-gradient(
+            45deg,
+            rgba(255, 0, 0, 0.03),
+            rgba(255, 0, 0, 0.03) 1px,
+            transparent 1px,
+            transparent 20px
+        );
+    animation: moveGrid 20s linear infinite;
+    opacity: 0.25;
+    pointer-events: none;
+}
+
+@keyframes moveGrid {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(-50px, -50px);
+    }
+}
+
+/* Nagłówek */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    background-color: rgba(10, 10, 10, 0.8);
+    border-bottom: 1px solid #ff0000;
+    position: relative;
+}
+
+.logo {
+    font-size: 2.5rem;
+    font-weight: bold;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #fff;
+    text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+nav a {
+    color: #e0e0e0;
+    text-decoration: none;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    transition: all 0.3s;
+    position: relative;
+    padding: 5px 0;
+}
+
+nav a:hover {
+    color: #ff0000;
+    text-shadow: 0 0 5px #ff0000;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: #ff0000;
+    transition: width 0.3s;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* Sekcja główna */
+main {
+    padding: 50px 5%;
+}
+
+.product-details {
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: rgba(20, 20, 20, 0.7);
+    border: 1px solid #333;
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.2);
+    padding: 30px;
+    position: relative;
+    overflow: hidden;
+}
+
+.product-details::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #ff0000, transparent);
+}
+
+.product-details h1 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #fff;
+    text-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+}
+
+.details-content {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+
+.details-content img {
+    width: 300px;
+    height: auto;
+    border: 1px solid #333;
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.3);
+    transition: transform 0.3s;
+}
+
+.details-content img:hover {
+    transform: scale(1.03);
+}
+
+.info {
+    flex: 1;
+}
+
+.info h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #ff0000;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.info p {
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.price {
+    color: #ff0000;
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+
+/* Przycisk */
+.buy-button {
+    background-color: transparent;
+    color: #ff0000;
+    border: 1px solid #ff0000;
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-top: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    overflow: hidden;
+}
+
+.buy-button:hover {
+    background-color: #ff0000;
+    color: #000;
+    text-shadow: 0 0 5px #000;
+    box-shadow: 0 0 15px #ff0000;
+}
+
+.buy-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: 0.5s;
+}
+
+.buy-button:hover::before {
+    left: 100%;
+}
+
+/* Stopka */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(10, 10, 10, 0.8);
+    border-top: 1px solid #ff0000;
+    margin-top: 50px;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* Efekty specjalne */
+@keyframes flicker {
+    0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100% {
+        opacity: 1;
+    }
+    20%, 21.999%, 63%, 63.999%, 65%, 69.999% {
+        opacity: 0.5;
+    }
+}
+
+.logo, h1, h2 {
+    animation: flicker 8s infinite alternate;
+}
+
+/* Responsywność */
+@media (max-width: 768px) {
+    .details-content {
+        flex-direction: column;
+    }
+
+    .details-content img {
+        width: 100%;
+        max-width: 300px;
+        margin-bottom: 20px;
+    }
+
+    header {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}

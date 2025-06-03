@@ -1,0 +1,448 @@
+/* Reset i podstawowe style */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Rajdhani', 'Orbitron', sans-serif;
+}
+
+body {
+    background-color: #0a0a0a;
+    color: #e0e0e0;
+    overflow-x: hidden;
+    position: relative;
+    line-height: 1.6;
+}
+
+/* Animacja tła */
+.background-animation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 20% 30%, #330a0a 0%, transparent 40%),
+        radial-gradient(circle at 80% 70%, #1a0a0a 0%, transparent 40%),
+        #0a0a0a;
+    z-index: -2;
+    opacity: 0.8;
+}
+
+.background-animation::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        linear-gradient(90deg, #0a0a0a 21px, transparent 1%) center,
+        linear-gradient(#0a0a0a 21px, transparent 1%) center,
+        #ff000033;
+    background-size: 22px 22px;
+    opacity: 0.2;
+}
+
+/* Nagłówek */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    background-color: rgba(10, 10, 10, 0.9);
+    border-bottom: 1px solid #ff0000;
+    position: relative;
+    backdrop-filter: blur(5px);
+}
+
+.logo {
+    font-size: 2.5rem;
+    font-weight: bold;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #fff;
+    text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000;
+    font-family: 'Orbitron', sans-serif;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+nav a {
+    color: #e0e0e0;
+    text-decoration: none;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    transition: all 0.3s;
+    position: relative;
+    padding: 5px 0;
+    font-weight: 500;
+}
+
+nav a:hover {
+    color: #ff0000;
+    text-shadow: 0 0 5px #ff0000;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #ff0000;
+    transition: width 0.3s;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* Sekcja hero */
+.hero {
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 5%;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, rgba(255, 0, 0, 0.1) 0%, transparent 70%);
+    z-index: -1;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    color: #fff;
+    text-shadow: 0 0 10px rgba(255, 0, 0, 0.7);
+    font-family: 'Orbitron', sans-serif;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    margin-bottom: 40px;
+    max-width: 700px;
+    color: #b8b8b8;
+}
+
+.cta-button {
+    background-color: transparent;
+    color: #ff0000;
+    border: 2px solid #ff0000;
+    padding: 15px 40px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+    overflow: hidden;
+    font-weight: bold;
+    border-radius: 2px;
+}
+
+.cta-button:hover {
+    background-color: #ff0000;
+    color: #fff;
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.7);
+    transform: translateY(-3px);
+}
+
+.cta-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: 0.5s;
+}
+
+.cta-button:hover::before {
+    left: 100%;
+}
+
+/* Sekcja produktów */
+.products {
+    padding: 80px 5%;
+    background-color: rgba(10, 10, 15, 0.7);
+    border-top: 1px solid #ff0000;
+    border-bottom: 1px solid #ff0000;
+}
+
+.products h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+    font-family: 'Orbitron', sans-serif;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.product-card {
+    background: rgba(20, 20, 20, 0.7);
+    border: 1px solid #ff0000;
+    padding: 30px;
+    text-align: center;
+    transition: all 0.3s;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    border-radius: 5px;
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(255, 0, 0, 0.3);
+    background: rgba(30, 20, 20, 0.7);
+}
+
+.product-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #ff0000, transparent);
+}
+
+.product-card h3 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    color: #ff0000;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.product-card p {
+    color: #b8b8b8;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+}
+
+.price {
+    display: inline-block;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+    background-color: #ff0000;
+    padding: 5px 15px;
+    border-radius: 3px;
+    margin-top: 10px;
+}
+
+/* Sekcja kontakt */
+.contact {
+    padding: 80px 5%;
+    text-align: center;
+    background-color: rgba(10, 10, 15, 0.7);
+}
+
+.contact h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+    font-family: 'Orbitron', sans-serif;
+}
+
+.contact p {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    color: #b8b8b8;
+}
+
+.discord-tag, .phone {
+    color: #ff0000;
+    font-weight: bold;
+}
+
+/* Stopka */
+footer {
+    text-align: center;
+    padding: 30px;
+    background-color: rgba(10, 10, 10, 0.9);
+    border-top: 1px solid #ff0000;
+    font-size: 0.9rem;
+    color: #666;
+    backdrop-filter: blur(5px);
+}
+
+/* Efekty specjalne */
+@keyframes flicker {
+    0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100% {
+        opacity: 1;
+        text-shadow: 0 0 10px rgba(255, 0, 0, 0.7);
+    }
+    20%, 21.999%, 63%, 63.999%, 65%, 69.999% {
+        opacity: 0.8;
+        text-shadow: none;
+    }
+}
+
+.logo, h1, h2 {
+    animation: flicker 8s infinite alternate;
+}
+
+/* Responsywność */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero p {
+        font-size: 1.2rem;
+    }
+    
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+  }
+ .product-card.rockstar {
+    background-image: 
+        linear-gradient(rgba(10, 10, 10, 0.85), rgba(10, 10, 10, 0.85)),
+        url('rockstar.png');
+    background-size: 100px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-blend-mode: lighten;
+}
+
+.product-card.steam {
+    background-image: 
+        linear-gradient(rgba(10, 10, 10, 0.85), rgba(10, 10, 10, 0.85)),
+        url('steam.png');
+    background-size: 100px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-blend-mode: lighten;
+}
+
+.product-card.discord {
+    background-image: 
+        linear-gradient(rgba(10, 10, 10, 0.85), rgba(10, 10, 10, 0.85)),
+        url('discord.png');
+    background-size: 100px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-blend-mode: lighten;
+}
+
+/* Sekcja usług */
+.services {
+    padding: 80px 5%;
+    background-color: rgba(15, 10, 15, 0.7);
+    border-top: 1px solid #ff0000;
+    border-bottom: 1px solid #ff0000;
+}
+
+.services h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+    font-family: 'Orbitron', sans-serif;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.service-card {
+    background: rgba(20, 20, 30, 0.8);
+    border: 1px solid #ff0000;
+    padding: 25px;
+    border-radius: 5px;
+    text-align: center;
+    transition: 0.3s ease;
+    cursor: default;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(255, 0, 0, 0.3);
+    background: rgba(30, 20, 30, 0.9);
+}
+
+.service-card h3 {
+    color: #ff0000;
+    margin-bottom: 15px;
+    font-size: 1.6rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.service-card p {
+    color: #ccc;
+    font-size: 1rem;
+    line-height: 1.4;
+}
+.discord-icon {
+    width: 40px;
+    height: 40px;
+    margin-top: 10px;
+    transition: transform 0.3s, filter 0.3s;
+    filter: drop-shadow(0 0 5px #ff0000);
+}
+
+.discord-icon:hover {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 8px #ff0000);
+}
+
+.discord-link {
+    display: inline-block;
+    margin-top: 10px;
+}
+
+
