@@ -1,4 +1,4 @@
-/* Reset i podstawowe style */
+
 * {
     margin: 0;
     padding: 0;
@@ -13,7 +13,6 @@ body {
     position: relative;
 }
 
-/* Animacja tła */
 .background-animation {
     position: fixed;
     top: 0;
@@ -54,7 +53,6 @@ body {
     }
 }
 
-/* Nagłówek */
 header {
     display: flex;
     justify-content: space-between;
@@ -110,7 +108,6 @@ nav a:hover::after {
     width: 100%;
 }
 
-/* Sekcja główna */
 main {
     padding: 50px 5%;
 }
@@ -187,7 +184,6 @@ main {
     font-size: 1.3rem;
 }
 
-/* Przycisk */
 .buy-button {
     background-color: transparent;
     color: #ff0000;
@@ -225,7 +221,6 @@ main {
     left: 100%;
 }
 
-/* Stopka */
 footer {
     text-align: center;
     padding: 20px;
@@ -236,7 +231,6 @@ footer {
     color: #666;
 }
 
-/* Efekty specjalne */
 @keyframes flicker {
     0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100% {
         opacity: 1;
@@ -250,7 +244,6 @@ footer {
     animation: flicker 8s infinite alternate;
 }
 
-/* Responsywność */
 @media (max-width: 768px) {
     .details-content {
         flex-direction: column;
