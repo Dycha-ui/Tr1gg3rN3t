@@ -1,4 +1,4 @@
-/* Reset i podstawowe style */
+
 * {
     margin: 0;
     padding: 0;
@@ -14,7 +14,6 @@ body {
     line-height: 1.6;
 }
 
-/* Animacja tła */
 .background-animation {
     position: fixed;
     top: 0;
@@ -44,7 +43,6 @@ body {
     opacity: 0.2;
 }
 
-/* Nagłówek */
 header {
     display: flex;
     justify-content: space-between;
@@ -103,7 +101,6 @@ nav a:hover::after {
     width: 100%;
 }
 
-/* Sekcja hero */
 .hero {
     min-height: 70vh;
     display: flex;
@@ -182,7 +179,6 @@ nav a:hover::after {
     left: 100%;
 }
 
-/* Sekcja produktów */
 .products {
     padding: 80px 5%;
     background-color: rgba(10, 10, 15, 0.7);
@@ -262,7 +258,6 @@ nav a:hover::after {
     margin-top: 10px;
 }
 
-/* Sekcja kontakt */
 .contact {
     padding: 80px 5%;
     text-align: center;
@@ -290,7 +285,6 @@ nav a:hover::after {
     font-weight: bold;
 }
 
-/* Stopka */
 footer {
     text-align: center;
     padding: 30px;
@@ -301,7 +295,6 @@ footer {
     backdrop-filter: blur(5px);
 }
 
-/* Efekty specjalne */
 @keyframes flicker {
     0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100% {
         opacity: 1;
@@ -317,7 +310,6 @@ footer {
     animation: flicker 8s infinite alternate;
 }
 
-/* Responsywność */
 @media (max-width: 768px) {
     header {
         flex-direction: column;
@@ -371,7 +363,6 @@ footer {
     background-blend-mode: lighten;
 }
 
-/* Sekcja usług */
 .services {
     padding: 80px 5%;
     background-color: rgba(15, 10, 15, 0.7);
