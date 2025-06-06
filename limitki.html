@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TriggerNet | Serwery FiveM Limitki</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #0d0d0d;
+            color: #fff;
+            font-family: 'Rajdhani', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background: #1a1a1a;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.8rem;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #ff0000;
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #ff0000;
+            margin-bottom: 40px;
+        }
+
+        .server-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .server-card {
+            background: #1f1f1f;
+            border: 1px solid #ff0000;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .server-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
+        }
+
+        .server-card h3 {
+            color: #fff;
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+
+        .server-card p {
+            color: #ccc;
+            font-size: 0.95rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #111;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">TRIGGER<span style="color: #ff0000;">NET</span></div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#serwery">Serwery</a></li>
+                <li><a href="#kontakt">Kontakt</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>SERWERY FIVEM - LIMITKI</h1>
+        <section id="serwery" class="server-grid">
+            <div class="server-card" onclick="window.location.href='klamkagg.html'">
+                <h3>KlamkaGG</h3>
+                <p>Limitki</p>
+            </div>
+            <div class="server-card" onclick="window.location.href='server2.html'">
+                <h3>MangoRP</h3>
+                <p>Ekskluzywne pojazdy i dodatki</p>
+            </div>
+            <div class="server-card" onclick="window.location.href='server3.html'">
+                <h3>SunsetRP</h3>
+                <p>Unikalne limitki premium</p>
+            </div>
+        </section>
+    </main>
+
+    <footer id="kontakt">
+        <p>&copy; 2025 TRIGGERNET | Wszelkie prawa zastrzeżone.</p>
+    </footer>
+</body>
+</html>
