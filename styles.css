@@ -1,4 +1,3 @@
-
 * {
     margin: 0;
     padding: 0;
@@ -264,4 +263,12 @@ footer {
         flex-wrap: wrap;
         justify-content: center;
     }
+}
+.buy-button:active {
+    transform: scale(0.95);
+    box-shadow: 0 0 5px #ff0000;
+}
+
+.buy-button {
+    transition: all 0.3s, transform 0.1s;
 }
